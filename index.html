@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github でウェブページを公開してみよう！のコーナー</title>
+</head>
+
+<body>
+    <header>
+        <h1>Github でウェブページを公開してみよう！のコーナー</h1>
+    </header>
+    <button onclick="goToPage('steps')" style="margin: 20px; padding: 10px; font-size: 16px;">
+        > 経緯とか知るかよっさと手順だせやって人向け
+    </button>
+
+    <main class="layout">
+        <button class="overlay-btn overlay-left" onclick="movePage(-1)">‹</button>
+        <div class="content-wrapper">
+            <div id="content" class="card"></div>
+            <div class="progress-wrapper">
+                <div class="progress-track">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+        <button class="overlay-btn overlay-right" onclick="movePage(1)">›</button>
+    </main>
+
+    <!-- 用語ホバー時の表示 -->
+    <div id="tooltip" class="tooltip"></div>
+
+    <!-- 目次を開くボタン -->
+    <button id="toc-toggle" class="toc-toggle">目次</button>
+    <!-- 目次を開くボタン -->
+    <div id="toc-overlay" class="toc-overlay">
+        <div id="toc-panel" class="toc-panel">
+            <div class="toc-header">
+                <h3>目次</h3>
+            </div>
+            <ul id="toc-list" class="toc-list"></ul>
+        </div>
+    </div>
+
+
+
+    <!-- 用語集を開くボタン -->
+    <button id="glossary-toggle" class="glossary-toggle">用語集</button>
+
+    <!-- ▼ 背景オーバーレイ -->
+    <div id="glossary-overlay" class="glossary-overlay">
+
+        <!-- ▼ 用語集パネル -->
+        <div id="glossary-panel" class="glossary-panel">
+            <div class="glossary-header">
+                <h3>用語集</h3>
+                <!-- <button id="glossary-close">×</button> -->
+            </div>
+
+            <div class="glossary-content">
+                <table class="glossary-table">
+                    <thead>
+                        <tr>
+                            <th>用語</th>
+                            <th>説明</th>
+                        </tr>
+                    </thead>
+                    <tbody id="glossary-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
