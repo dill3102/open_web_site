@@ -19,6 +19,7 @@ const pages = [
   { key: "notes", title: "注意事項" },
   { key: "other", title: "その他" },
   { key: "final", title: "最後に" },
+  { key: "final_last", title: "ふぁいるなるらすと" },
 ];
 
 // 用語集用のデータ
@@ -188,7 +189,8 @@ function loadPage() {
 ========================= */
 
 function updateProgress() {
-  const index = pages.indexOf(currentPage);
+  const index = pages.findIndex((page) => page.key === currentPage);
+  
   const percent = (index / (pages.length - 1)) * 100;
   progressBar.style.width = percent + "%";
 }
