@@ -96,6 +96,45 @@ const glossary = {
 const content = document.getElementById("content");
 const progressBar = document.getElementById("progress-bar");
 
+// Delegated click handler for dynamic page content.
+// Buttons inside injected pages (e.g. make_private) can be handled here
+// so we don't rely on inline scripts or DOMContentLoaded in injected HTML.
+content.addEventListener('click', function(e){
+  var target = e.target;
+  // find nearest button (in case click was on inner text)
+  var btn = target.closest ? target.closest('button') : null;
+  if(!btn) return;
+
+  if(btn.id === 'btn-text'){
+    var textDiv = document.getElementById('makePrivate-text-check');
+    var imageDiv = document.getElementById('makePrivate-image-check');
+    if(textDiv) textDiv.style.display = '';
+    if(imageDiv) imageDiv.style.display = 'none';
+  }
+
+  if(btn.id === 'btn-image'){
+    var textDiv = document.getElementById('makePrivate-text-check');
+    var imageDiv = document.getElementById('makePrivate-image-check');
+    if(textDiv) textDiv.style.display = 'none';
+    if(imageDiv) imageDiv.style.display = '';
+  }
+});
+
+// グローバル関数 (onclick 属性から呼び出すため)
+window.makePrivateShowText = function(){
+  var textDiv = document.getElementById('makePrivate-text-check');
+  var imageDiv = document.getElementById('makePrivate-image-check');
+  if(textDiv) textDiv.style.display = '';
+  if(imageDiv) imageDiv.style.display = 'none';
+}
+
+window.makePrivateShowImage = function(){
+  var textDiv = document.getElementById('makePrivate-text-check');
+  var imageDiv = document.getElementById('makePrivate-image-check');
+  if(textDiv) textDiv.style.display = 'none';
+  if(imageDiv) imageDiv.style.display = '';
+}
+
 /* =========================
    初期URL読込
 ========================= */
