@@ -1,0 +1,33 @@
+<div style="max-width:100%; overflow-wrap:break-word;">
+    <h2>試してみる</h2>
+    <div class="line-bar" style="background-color:gray;"></div>
+    <ul style="padding-left: 20px; margin: 0; max-width:100%;">
+        <li style="max-width:100%;">
+            <h3>画像載せてみた</h3>
+            <img style="max-width:100%;" src="resources/images/sample.png" alt="サンプル画像">
+            <ul>
+                <li style="margin-left: 14px;">
+                    めっちゃ綺麗じゃないですか？(地元なので特定はしないでください)
+                </li>
+            </ul>
+    </ul>
+    <div class="line-bar"></div>
+    <ul style="margin-left: 20px;">
+        <li>
+            <h3>音源(mp3)載せてみた</h3>
+            <ul style="margin-left: 20px;">
+                <li style="margin-top: 4px; margin-bottom: 4px;">再生する(1回)</li>
+                <button id="playSampleSoundButton" style="width: 160px;" onclick="playSampleSound()">Start</button>
+                <audio id="playSampleSound" src="resources/open_menu.mp3"></audio>
+            </ul>
+        </li>
+        <div class="line-bar"></div>
+        <ul style="margin-left: 20px;">
+            <li style="margin-top: 4px; margin-bottom: 4px;">再生する(ループ)</li>
+            <button id="playSampleSoundLoopStartButton" style="width: 160px;"
+                onclick="playSampleSoundLoopToggle()">Start</button>
+            <audio id="playSampleSoundLoop" src="resources/open_menu.mp3" loop></audio>
+        </ul>
+    </ul>
+    <div class="line-bar"></div>
+</div>

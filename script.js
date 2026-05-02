@@ -12,14 +12,14 @@ const pages = [
   { key: "table_of_contents", title: "目次" },
   { key: "article_reason", title: "この記事を書こうと思った経緯" },
   { key: "what_can", title: "何が出来る?" },
+  { key: "what_can_sample", title: "試してみる" },
   { key: "steps", title: "じゃあ、実際の手順について" },
-  { key: "troubleshooting", title: "公開出来なかった時の確認事項" },
   { key: "make_private", title: "非公開にする" },
   { key: "references", title: "参考" },
   { key: "notes", title: "注意事項" },
   { key: "other", title: "その他" },
   { key: "final", title: "最後に" },
-  { key: "final_last", title: "ふぁいるなるらすと" },
+  // { canChangeFormat: false, key: "final_last", title: "ふぁいるなるらすと" },
 ];
 
 // 用語集用のデータ
@@ -99,41 +99,61 @@ const progressBar = document.getElementById("progress-bar");
 // Delegated click handler for dynamic page content.
 // Buttons inside injected pages (e.g. make_private) can be handled here
 // so we don't rely on inline scripts or DOMContentLoaded in injected HTML.
-content.addEventListener('click', function(e){
+content.addEventListener("click", function (e) {
   var target = e.target;
   // find nearest button (in case click was on inner text)
-  var btn = target.closest ? target.closest('button') : null;
-  if(!btn) return;
+  var btn = target.closest ? target.closest("button") : null;
+  if (!btn) return;
 
-  if(btn.id === 'btn-text'){
-    var textDiv = document.getElementById('makePrivate-text-check');
-    var imageDiv = document.getElementById('makePrivate-image-check');
-    if(textDiv) textDiv.style.display = '';
-    if(imageDiv) imageDiv.style.display = 'none';
+  if (btn.id === "btn-text") {
+    var textDiv = document.getElementById("makePrivate-text-check");
+    var imageDiv = document.getElementById("makePrivate-image-check");
+    if (textDiv) textDiv.style.display = "";
+    if (imageDiv) imageDiv.style.display = "none";
   }
 
-  if(btn.id === 'btn-image'){
-    var textDiv = document.getElementById('makePrivate-text-check');
-    var imageDiv = document.getElementById('makePrivate-image-check');
-    if(textDiv) textDiv.style.display = 'none';
-    if(imageDiv) imageDiv.style.display = '';
+  if (btn.id === "btn-image") {
+    var textDiv = document.getElementById("makePrivate-text-check");
+    var imageDiv = document.getElementById("makePrivate-image-check");
+    if (textDiv) textDiv.style.display = "none";
+    if (imageDiv) imageDiv.style.display = "";
   }
 });
 
 // グローバル関数 (onclick 属性から呼び出すため)
-window.makePrivateShowText = function(){
-  var textDiv = document.getElementById('makePrivate-text-check');
-  var imageDiv = document.getElementById('makePrivate-image-check');
-  if(textDiv) textDiv.style.display = '';
-  if(imageDiv) imageDiv.style.display = 'none';
-}
+window.makePrivateShowText = function () {
+  var textDiv = document.getElementById("makePrivate-text-check");
+  var imageDiv = document.getElementById("makePrivate-image-check");
+  if (textDiv) textDiv.style.display = "";
+  if (imageDiv) imageDiv.style.display = "none";
+};
 
-window.makePrivateShowImage = function(){
-  var textDiv = document.getElementById('makePrivate-text-check');
-  var imageDiv = document.getElementById('makePrivate-image-check');
-  if(textDiv) textDiv.style.display = 'none';
-  if(imageDiv) imageDiv.style.display = '';
-}
+window.makePrivateShowImage = function () {
+  var textDiv = document.getElementById("makePrivate-text-check");
+  var imageDiv = document.getElementById("makePrivate-image-check");
+  if (textDiv) textDiv.style.display = "none";
+  if (imageDiv) imageDiv.style.display = "";
+};
+
+window.playSampleSound = function () {
+  const audio = document.getElementById("playSampleSound");
+  audio.currentTime = 0;
+  audio.play();
+};
+
+window.playSampleSoundLoopToggle = function () {
+  const audio = document.getElementById("playSampleSoundLoop");
+  const btn = document.getElementById("playSampleSoundLoopStartButton");
+  if (audio.paused) {
+    audio.currentTime = 0;
+    audio.play();
+    btn.textContent = "Stop (再生中...)";
+  } else {
+    audio.pause();
+    audio.currentTime = 0;
+    btn.textContent = "Start";
+  }
+};
 
 /* =========================
    初期URL読込
@@ -229,7 +249,7 @@ function loadPage() {
 
 function updateProgress() {
   const index = pages.findIndex((page) => page.key === currentPage);
-  
+
   const percent = (index / (pages.length - 1)) * 100;
   progressBar.style.width = percent + "%";
 }
@@ -239,6 +259,7 @@ function updateProgress() {
 ========================= */
 
 document.addEventListener("keydown", (e) => {
+  console.log(e.key);
   if (e.key === "ArrowRight") movePage(1);
   if (e.key === "ArrowLeft") movePage(-1);
 });
@@ -421,4 +442,3 @@ function renderTOC(target) {
     tocList.appendChild(li);
   });
 }
-

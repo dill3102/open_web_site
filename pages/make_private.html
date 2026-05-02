@@ -1,49 +1,83 @@
 <div>
     <h2>非公開にする</h2>
-    <div style="color:gray; height:2px; width:100%; margin-bottom:6px; margin-top:4px; background-color:gray;"></div>
+    <div class="line-bar" style="background-color:gray;"></div>
 
-    <div style="margin-left:20px; margin-top:8px;">
-        <button id="makePrivate-text-button" onclick="makePrivateShowText()"
-            style="margin-right:8px; padding:6px 10px;">テキストで確認</button>
-        <button id="makePrivate-image-button" onclick="makePrivateShowImage()" style="padding:6px 10px;">画像で確認</button>
-    </div>
-
-    <!-- テキストで確認 -->
-    <div id="makePrivate-text-check" style="margin-left:20px; margin-top:12px;">
-        <ul style="margin-left: 20px;">
-            <li>Settings を押下する</li>
-            <ul style="margin-left: 14px;">
-                <li><code>{RepositoryURL}/settings</code> へ移動</li>
-            </ul>
-            <li>Danger Zone → Change repository visibility</li>
-            <ul style="margin-left: 14px;">
-                <li>"Change visibility" を押下</li>
-                <li>"Change to private" ボタンを押下する</li>
-                <li>確認ダイアログ(Make &lt;&lt;repository name&gt;&gt; private)の手順:
-                    <ul style="margin-left: 12px;">
-                        <li>"I want to make this repository private" を選択</li>
-                        <li>"I have read and understand these effects" を確認して選択</li>
-                        <li>"Make this repository private" を押下</li>
-                    </ul>
-                </li>
-                <li>最初のページへ戻って、リポジトリ名の横に鍵のマークがついていれば完了</li>
-            </ul>
+    <!-- 説明 1 -->
+    <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+        <li style="max-width:100%;">
+            <h3>Settings を押下する</h3>
+            <img style="max-width:100%;" src="./resources/images/make_private/1.jpg" alt="読み込み失敗 1.jpg"></img>
+        </li>
+        <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+            <li><code>{RepositoryURL}/settings</code> へ移動します</li>
         </ul>
-    </div>
+    </ul>
+    <div class="line-bar"></div>
 
-    <div id="makePrivate-image-check" style="margin-left:20px; margin-top:12px; display:none;">
-        <ul style="list-style:none; padding:0; margin:0;">
-            <li><img src="./images/make_private/1.jpg" alt="読み込み失敗 1.jpg"></li>
-            <li><img src="./images/make_private/2.jpg" alt="読み込み失敗 2.jpg"></li>
-            <li><img src="./images/make_private/3.jpg" alt="読み込み失敗 3.jpg"></li>
-            <li><img src="./images/make_private/4.jpg" alt="読み込み失敗 4.jpg"></li>
-            <li><img src="./images/make_private/5.jpg" alt="読み込み失敗 5.jpg"></li>
-            <li><img src="./images/make_private/6.jpg" alt="読み込み失敗 6.jpg"></li>
-            <li><img src="./images/make_private/7.jpg" alt="読み込み失敗 7.jpg"></li>
+    <!-- 説明 2 -->
+    <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+        <li style="max-width:100%;">
+            <h3>Danger Zone → Change repository visibility を押下する</h3>
+        </li>
+        <img style="max-width:100%;" src="./resources/images/make_private/2.jpg" alt="読み込み失敗 2.jpg"></img>
+    </ul>
+    <div class="line-bar"></div>
+
+    <!-- 説明 3 -->
+    <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+        <li style="max-width:100%;">
+            <h3>Change visibility を押下する</h3>
+            <img style="max-width:100%;" src="./resources/images/make_private/3.jpg" alt="読み込み失敗 3.jpg"></img>
+        </li>
+        <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+            <li><code>Change to private</code> (コンテキストメニュー)が表示されます</li>
         </ul>
-    </div>
+    </ul>
+    <div class="line-bar"></div>
 
-    <div
-        style="color:lightgray; height:2px; width:100%; margin-bottom:6px; margin-top:8px; background-color:lightgray;">
-    </div>
+    <!-- 説明 4 -->
+    <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+        <li style="max-width:100%;">
+            <h3>"Change to private" ボタンを押下する</h3>
+        </li>
+        <img style="max-width:100%;" src="./resources/images/make_private/4.jpg" alt="読み込み失敗 4.jpg"></img>
+    </ul>
+    <div class="line-bar"></div>
+    
+    <!-- 説明 5 -->
+    <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+        <li style="max-width:100%;">
+            <h3>"I want to make this repository private" を選択</h3>
+        </li>
+        <img style="max-width:100%;" src="./resources/images/make_private/5.jpg" alt="読み込み失敗 5.jpg"></img>
+        <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+            <li>ポップアップが表示されます</li>
+        </ul>
+    </ul>
+    <div class="line-bar"></div>
+
+    <!-- 説明 6 -->
+    <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+        <li style="max-width:100%;">
+            <h3>"I have read and understand these effects" を確認して選択</h3>
+        </li>
+        <img style="max-width:100%;" src="./resources/images/make_private/6.jpg" alt="読み込み失敗 6.jpg"></img>
+        <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+            <li>ポップアップの内容が変化します</li>
+        </ul>
+    </ul>
+    <div class="line-bar"></div>
+
+    <!-- 説明 7 -->
+    <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+        <li style="max-width:100%;">
+            <h3>"Make this repository private" を押下</h3>
+        </li>
+        <img style="max-width:100%;" src="./resources/images/make_private/7.jpg" alt="読み込み失敗 7.jpg"></img>
+        <ul style="padding-left: 20px; margin: 0; max-width:100%; margin-bottom: 16px;">
+            <li>{RepositoryURL}/settings へ移動します</li>
+            <li>リポジトリ名の横に鍵のマークがついていればOK</li>
+        </ul>
+    </ul>
+    <div class="line-bar"></div>
 </div>
