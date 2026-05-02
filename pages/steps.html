@@ -1,5 +1,76 @@
 <div>
     <h2>じゃあ、実際の手順について</h2>
     <div class="line-bar" style="background-color:gray;"></div>
-    <div>./pages/steps.html</div>
+    <div style="text-align: right; margin-bottom: 8px;">
+        <button id="toggleBtn" onclick="detailsAllToggle('steps')">全部開く</button>
+    </div>
+
+    <div id="steps">
+        <!-- 説明 1 -->
+        <details style="margin-bottom:16px;">
+            <summary style="font-weight:bold;">Settings を押下する</summary>
+            <img style="max-width:100%; padding-left: 20px;" src="./resources/images/steps/1.jpg"
+                alt="読み込み失敗 1.jpg"></img>
+        </details>
+        <ul style="padding-left: 40px; margin: 0; max-width:100%; margin-bottom: 16px;">
+            <li><code>{RepositoryURL}/settings</code> へ移動します</li>
+        </ul>
+        <div class="line-bar"></div>
+        <!-- 説明 2 -->
+        <details style="margin-bottom:16px;">
+            <summary style="font-weight:bold;">Pages を押下する</summary>
+            <img style="max-width:100%;" src="./resources/images/steps/2.jpg" alt="読み込み失敗 2.jpg"></img>
+        </details>
+        <ul style="padding-left: 40px; margin: 0; max-width:100%; margin-bottom: 16px;">
+            <li><code>{RepositoryURL}/settings/pages</code> へ移動します</li>
+        </ul>
+        <div class="line-bar"></div>
+
+        <!-- 説明 3 -->
+        <details style="margin-bottom:16px;">
+            <summary style="font-weight:bold;">Branch / None ▼ を押下する</summary>
+            <img style="max-width:100%;" src="./resources/images/steps/3.jpg" alt="読み込み失敗 3.jpg"></img>
+        </details>
+        <ul style="padding-left: 40px; margin: 0; max-width:100%; margin-bottom: 16px;">
+            <li><code>{RepositoryURL}/settings/pages</code> へ移動します</li>
+        </ul>
+        <div class="line-bar"></div>
+
+        <!-- 説明 4 -->
+        <details style="margin-bottom:16px;">
+            <summary style="font-weight:bold;">対象ブランチを選択</summary>
+            <img style="max-width:100%;" src="./resources/images/steps/4.jpg" alt="読み込み失敗 4.jpg"></img>
+        </details>
+        <ul style="padding-left: 40px; margin: 0; max-width:100%; margin-bottom: 16px;">
+            <li>複数で開発する場合などは Branch は複数になりますが、この資料では main 以外は未作成のため、main Branchを選択します。</li>
+        </ul>
+        <div class="line-bar"></div>
+
+        <!-- 説明 5 -->
+        <details style="margin-bottom:16px;">
+            <summary style="font-weight:bold;">Save ボタンを押下する</summary>
+            <img style="max-width:100%;" src="./resources/images/steps/5.jpg" alt="読み込み失敗 5.jpg"></img>
+        </details>
+        <div class="line-bar"></div>
+
+        <!-- 説明 6 -->
+        <details style="margin-bottom:16px;">
+            <summary style="font-weight:bold;">GitHub Pages source saved が表示されれば公開成功</summary>
+            <img style="max-width:100%;" src="./resources/images/steps/6.jpg" alt="読み込み失敗 6.jpg"></img>
+        </details>
+        <ul style="padding-left: 40px; margin: 0; max-width:100%; margin-bottom: 16px;">
+            <li>※実際に公開されるには多少待つ必要があります(待ったうえでリロード等を行ってください)</li>
+        </ul>
+        <div class="line-bar"></div>
+
+        <!-- 説明 7 -->
+        <details style="margin-bottom:16px;">
+            <summary style="font-weight:bold;">公開されたサイトを見に行く</summary>
+            <img style="max-width:100%;" src="./resources/images/steps/7.jpg" alt="読み込み失敗 7.jpg"></img>
+        </details>
+        <ul style="padding-left: 40px; margin: 0; max-width:100%; margin-bottom: 16px;">
+            <li>リンクをクリックして公開されたサイトを確認します</li>
+        </ul>
+        <div class="line-bar"></div>
+    </div>
 </div>

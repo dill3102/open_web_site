@@ -155,6 +155,19 @@ window.playSampleSoundLoopToggle = function () {
   }
 };
 
+
+window.detailsAllToggle = function (key) {
+   const items = document.querySelectorAll( "#"+key+" details");
+  const btn = document.getElementById("toggleBtn");
+
+  // 1つでも閉じてたら「全部開く」
+  const shouldOpen = [...items].some(d => !d.open);
+
+  items.forEach(d => d.open = shouldOpen);
+
+  btn.textContent = shouldOpen ? "全て閉じる" : "全て開く";
+};
+
 /* =========================
    初期URL読込
 ========================= */
