@@ -19,7 +19,7 @@ const pages = [
   { key: "notes", title: "注意事項" },
   { key: "other", title: "その他" },
   { key: "final", title: "最後に" },
-  // { canChangeFormat: false, key: "final_last", title: "ふぁいるなるらすと" },
+  { key: "final_last", title: "ふぁいるなるらすと" },
 ];
 
 // 用語集用のデータ
@@ -91,6 +91,12 @@ const glossary = {
     description:
       "バグ報告や機能要望、タスク管理を行うためのチケット機能。GitHubなどでプロジェクト管理に使われる。",
   },
+
+  customDomain: {
+    name: "カスタムドメイン",
+    description:
+      "独自のドメイン名を取得してWebサイトに適用すること。ブランドの強化やSEO効果が期待できる。",
+  },
 };
 
 const content = document.getElementById("content");
@@ -155,15 +161,14 @@ window.playSampleSoundLoopToggle = function () {
   }
 };
 
-
 window.detailsAllToggle = function (key) {
-   const items = document.querySelectorAll( "#"+key+" details");
+  const items = document.querySelectorAll("#" + key + " details");
   const btn = document.getElementById("toggleBtn");
 
   // 1つでも閉じてたら「全部開く」
-  const shouldOpen = [...items].some(d => !d.open);
+  const shouldOpen = [...items].some((d) => !d.open);
 
-  items.forEach(d => d.open = shouldOpen);
+  items.forEach((d) => (d.open = shouldOpen));
 
   btn.textContent = shouldOpen ? "全て閉じる" : "全て開く";
 };
