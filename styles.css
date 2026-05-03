@@ -173,10 +173,25 @@ body {
 /* 左右位置 */
 .overlay-left {
     left: 0;
+    opacity: 0;
 }
 
 .overlay-right {
     right: 0;
+    opacity: 0;
+}
+
+
+/* =========================
+   スマホ対応
+========================= */
+@media (max-width: 768px) {
+
+    /* slide無効化（＝最初から表示状態にする） */
+    .overlay-left,
+    .overlay-right {
+        display: none;
+    }
 }
 
 /* ホバー時に表示 */
@@ -278,7 +293,6 @@ body {
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-
 /* =========================
    用語集
 ========================= */
@@ -306,10 +320,6 @@ body {
 .tooltip.show {
     opacity: 1;
 }
-
-
-
-
 
 /* =========================
     用語集 Toggle Button
@@ -517,4 +527,14 @@ body {
     margin-top: 4px;
     margin-bottom: 4px;
     background-color: lightgray;
+}
+
+.main-title {
+    font-size: 32px;
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 20px;
+    }
 }

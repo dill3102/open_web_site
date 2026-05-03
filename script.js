@@ -277,7 +277,6 @@ function updateProgress() {
 ========================= */
 
 document.addEventListener("keydown", (e) => {
-  console.log(e.key);
   if (e.key === "ArrowRight") movePage(1);
   if (e.key === "ArrowLeft") movePage(-1);
 });
@@ -393,18 +392,23 @@ function renderGlossary() {
 }
 
 renderGlossary();
-
 /* =========================
-  開閉制御
+  用語集開閉制御
 ========================= */
 let isGlossaryOpen = false;
+
 glossaryToggle.addEventListener("click", () => {
-  if (isGlossaryOpen) {
-    glossaryOverlay.classList.remove("open");
-  } else {
+  if (!isGlossaryOpen) {
+    // 目次が開いていたら閉じる
+    tocOverlay.classList.remove("open");
+    tocIsOpen = false;
+
     glossaryOverlay.classList.add("open");
+    isGlossaryOpen = true;
+  } else {
+    glossaryOverlay.classList.remove("open");
+    isGlossaryOpen = false;
   }
-  isGlossaryOpen = !isGlossaryOpen;
 });
 
 /* 外側クリックで閉じる */
@@ -415,27 +419,32 @@ glossaryOverlay.addEventListener("click", (e) => {
   }
 });
 
-/* =========================
-  目次制御
-========================= */
 
+/* =========================
+  目次開閉制御
+========================= */
 const tocOverlay = document.getElementById("toc-overlay");
 const tocToggle = document.getElementById("toc-toggle");
 let tocIsOpen = false;
 
 tocToggle.addEventListener("click", () => {
-  if (tocIsOpen) {
-    tocOverlay.classList.remove("open");
-  } else {
+  if (!tocIsOpen) {
+    // 用語集が開いていたら閉じる
+    glossaryOverlay.classList.remove("open");
+    isGlossaryOpen = false;
+
     tocOverlay.classList.add("open");
+    tocIsOpen = true;
+  } else {
+    tocOverlay.classList.remove("open");
+    tocIsOpen = false;
   }
-  tocIsOpen = !tocIsOpen;
 });
 
 tocOverlay.addEventListener("click", (e) => {
   if (e.target === tocOverlay) {
-    isGlossaryOpen = false;
     tocOverlay.classList.remove("open");
+    tocIsOpen = false;
   }
 });
 
